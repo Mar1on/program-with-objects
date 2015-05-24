@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 3</title>
+    <link rel="stylesheet" href="project3.css" >
+</head>
+
+<body >
+    <h1>Program with Objects</h1>
+    <div class="main">
+        <h2>Abstraction & Functions</h2>
+        <div class="description">
+            <p>
+            We used a variety of pre-defined functions like “webbrowser.open()”, “time.ctime()”, and “time.sleep()”  
+            in creating the Python projects.  We don’t know how these functions work behind the scenes or the details around it.  
+            The hiding of detail behind documentation in programming is called <strong>“Abstraction”</strong>.  
+            </p>
+
+            <p>
+            Abstraction is very powerful because it allows us the ease of using these functions simply by reading 
+            their documentation and applying it to our program.  It allows us to focus on the program we want to write.
+            </p>
+            <p>
+            <a href="https://docs.python.org/2/library/index.html">The Python Standard Library</a> contains the list and documentation of functions.  Below are a few examples.
+            </p>
+            <ul>
+                <li>Inside Python is a file named webbrowser.  Inside webbrowser is  a function called “open” which allowed us to open a link to a website</li>
+                <li>There is also a module called “time” and time has several functions defined inside of it like "ctime" which gives the current time and 
+                "sleep" which suspends program animation for a given length of time in seconds.</li>
+                <li><em>os.listdir()</em> will list files within the given directory</li>
+            </ul>
+        </div>
+
+        <h2>Use Classes</h2>
+        <div class="description">
+            <p>
+                In the previous lesson, we created projects using functions and used codes by writing them one line at a time.   
+                If we need to use that program for another object, we’d have to copy it and give it new parameter values.  
+                If we need to make changes, we’ll have to make it on all copies which is not very efficient.  
+                We need a way of making copies of a template without making multiple files which in programming is called a <strong>“class”</strong>.
+            </p>
+            <div class="subtitle">
+                Using the class “Turtle”:
+                <div class="details">
+                    <ul>
+                        <li>Within the Python library, there is a file named “turtle” which has a class called “Turtle”</li>
+                        <li>In the project, we used it by assigning it to an instance named “brad” </li>
+                            <span class='example'>
+                                brad = turtle.Turtle()
+                            </span>
+                        <li>“brad” now has access to all of the methods that are inside class turtle like forward() and right()</li>
+                            <div class='example'>
+                                brad.forward(100)<br />
+                                brad.right(90)<br />
+                            </div>
+                    </ul>                
+                </div>
+            </div>
+        
+            <div class="subtitle">
+                What is a class?
+                <div class="details">
+                    <ul>
+                        <li>Neatly packaged box that puts things together very well and allows as to write codes like <strong>turtle.Turtle()</strong> 
+                            with brackets which looks like we’re calling a function
+                        </li>
+                        <li>It calls the <strong>“init”</strong> function defined inside the class which stands for initialize 
+                        </li>
+                            <span class='example'>
+                                def __init__():
+                            </span>
+                        <li><strong>“init”</strong> creates space in memory for a new instance or object of the class
+
+                        </li>
+                        <li>In the turtle example, <strong>“brad”</strong> is an instance of the class
+                        </li>
+                        <li>Multiple instances of the class can be created
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Functions & Class
+                <div class="details">
+                    <ul>
+                        <li>webbrowser.open(url) is a function which calls a function to open the url in the browser
+                        </li>
+                        <li>turtle.Turtle() is a class which calls the “init” function first to initialize or create space in memory which did not exist before.  
+                            This makes it possible to have multiple instances of the class.
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Summary
+                <div class="details">
+                    <ul>
+                        <li>
+                            Class is a blueprint or template which has information/instructions defined inside of it.
+                        </li>
+                        <li>
+                            Instance of a class is an object that can do the things that were defined inside the class.
+                        </li>
+                        <li>
+                            Class is like template from which you can create a number of objects.
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+        </div>
+
+        <h2>Make Classes</h2>
+            <div class="description">
+                <div class="details">
+                    <ul>
+                        <li>
+                            To create a class in Python, we create a file (i.e. media.py) inside a folder (i.e. movies)
+                        </li>
+                        <li>
+                            To define a class, use the keyword <strong>“class”</strong> and the name of the class, i.e. <strong>class Movie():</strong>
+                        </li>
+                        <li>
+                            When naming classes, follow the guidelines in the <a href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html">Google Python Style Guide</a> 
+                        </li>
+                        <li>
+                            Create another file in the same folder.  This file will be used to call the class that was created in the other file (media.py).
+                        </li>
+                        <li>
+                            Although the entire codes can be written in the same file, it is a good practice to keep 
+                            the class definition in one file and to use/call the class from another file.
+                        </li>
+                        <li>
+                            Use <strong>“import media”</strong> in the new file.  This means you want to use the contents of the file media.py
+                        </li>
+                        <li>
+                            <strong>media.Movie()</strong> means you want to use the <strong>class Movie()</strong> which resides in the file <strong>media.py</strong>
+                        </li>
+                        <li>
+                            You can then assign the class to an instance (i.e. toy_story = media.Movie()
+                        </li>
+                        <li>
+                            When the class media.Movie() is called, the <strong>init</strong> function will create a space in memory for the new instance (toy_story)
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+            
+            <div class="subtitle">
+                The init Function
+                <div class="details">
+                    <ul>
+                        <li>
+                            The init function is called a constructor because it constructs space in memory for the new instance or object .
+                        </li>
+                        <li>
+                            It is defined by using <strong>“def __init__():”</strong>
+                        </li>
+                        <li>
+                            The two underscores before and after “init” are a way for Python to tell the programmers that the name “init” is 
+                            reserved in Python and is a special function or method (creates space in memory).
+                        </li>
+                        <li>
+                            It takes a few pieces of information or arguments that need to be remembered inside the class.  The first one is the 
+                            keyword “self” which is the object being created (or itself).
+                        </li>
+                        <li>
+                            Additional arguments are initialized by creating variables and assigning the corresponding arguments being received 
+                            from the init function to the variable.  See example below.
+                        </li>
+                            <img src="make_classes.png" />
+                        <li>
+                            Every object/instance created using the defined “class” has memory space set aside for each instance.  
+                            Within that space, each instance has its own copy of the variables.  Because these variables are unique to 
+                            each instance of class movie, these variables are called <strong>instance variables</strong>.
+                        </li>
+                        <li>
+                            Besides variables, functions can also be defined inside the class.  A function that is defined inside a class and is 
+                            associated with an instance is called an <strong>instance method</strong>.
+                        </li>
+
+                    </ul>                
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Recap Vocabulary
+                <div class="details">
+                    <p class="vocabulary">
+                        <strong>Class</strong> – class keyword allows us to make classes.  Think of it as a blueprint. A class can have both data and methods.
+                    </p>
+                    <p class="vocabulary">
+                        <strong>Instance</strong> – an object created using class; can create multiple instances of a class (i.e. toy_story and avatar).
+                    </p>
+                    <p class="vocabulary">
+                        <strong>Constructor</strong> (i.e. function init) – when we create an instance of a class, the classes constructor gets called.  
+                        This is essentially the init method inside the class.  It is here that we initialize all of the data associated with the instance.  
+                        The constructor uses the keyword “self”. 
+                    </p>
+                    <p class="vocabulary">
+                        <strong>Self</strong> – refers to itself or the instance in question (i.e. toy_story).   So when the instance toy_story is getting created, self is toy_story.
+                    </p>
+                    <p class="vocabulary">
+                        <strong>Instance Variables</strong> – all the variables associated with a specific instance.  These are unique to an object and can be accessed 
+                        using the self keyword inside the class and the instance name outside of the class.
+                    </p>
+                    <p class="vocabulary">
+                        <strong>Instance Methods</strong> – all of the functions inside the class that are associated with an instance and have the first argument as 
+                        self are called instance methods.  
+                    </p>
+                    <p class="vocabulary">
+                        <img src="vocabulary.png" />
+                    </p>
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Class Variables
+                <div class="details">
+                    <ul>
+                        <li>
+                            Variables that are shared by the multiple instances of the class.  Sometimes it does not make sense to create separate 
+                            variables for each instance when the values are the same for all instances.
+                        </li>
+                        <li>
+                            Use ALL CAPS when creating this constant variable per recommendation by the Google Style Guide, i.e.<br />
+                            VALID_RATINGS = ["G", "PG", "PG-13", "R"]
+                        </li>
+                        <li>
+                            In Python, all classes come with pre-existing class variables, below are some of the variables:
+                            <br />
+                            <div class='example2'>
+                                __doc__	(i.e.  turtle.Turtle.__doc__)<br />
+                                __name__	(i.e.  media.Movie.__name__)<br />
+                                __module__  	(i.e. media.Movie.__module__)<br />
+                            </div>
+
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Inheritance
+                <div class="details">
+                    A child class inherits from its parent class.   Once a parent class is defined, you can define a child class that will get the 
+                    variables and methods of its parent.   The parent’s attributes are available to the child class. 
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Method Overriding
+                <div class="details">
+                    A child class can also have a method with the same name as its parent.  When this happens, it is used instead of the one from the parent.
+                </div>
+            </div>
+
+            <div class="subtitle">
+                Inheritance Example:
+                <div class="details">
+                    <img src="inheritance.png" />
+                </div>
+            </div>
+    </div>
+
+</body>
+</html>
